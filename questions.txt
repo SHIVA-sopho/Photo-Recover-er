@@ -1,0 +1,71 @@
+0.  BMP is 32 bit and it can also be 24 bit
+       for 32 bit over 4.2 billion or 2^32 color 
+       for 24 bit over 16.7 million or 2^24 color
+    GIF is 8 bit i.e 256 or 2^8 color
+    JPEG is 24 bit i.e over 16.7 million or 2^24 color
+    PNG is also 24 bit i.e over 16.7 million or 2^24 color
+
+1.  GIF supports animation
+
+2.  In lossy compression information or original data can not be recovered 
+    back exactly as it was initially so after compression the file recovered
+    has some of the data missing usually redundant data thus reducing
+    the squality of image ex- JPEG 
+    A lossless compression is a compression in which a file can be completly
+    recovered after uncompressing it ex - GIF & PNG
+    
+3.  JPEG  is a lossy compression format
+
+4.  In FAT when a file is deleted only the information in the 
+    address table is erased while the actual content of file remains
+    intact in the harddisk
+    
+5.  delete the file with some usefull tool which not only
+    removes the information from address table but also 
+    rewrite the memory occupied by file on hardisk by zeroes
+    
+6.  stdint.h is a header file that declares specified integer
+    types as having a certain width
+    
+7.  It makes clear that we intend to use the data in a specific way
+    for some specific work so as to get int of specific size
+	uint24_t means an integer that is exactly 24 bits wide
+	
+8.  BYTE size = 1 byte
+    Dword size = 4 bytes
+    LONG size = 4 bytes
+    WORD size = 2 bytes
+
+9.  The first two bytes of a BMP is a WORD and denotes bfType, 
+    which specifies the file type.
+    It must be  the signature word BM (0x4D42) to indicate bitmap
+
+10. bfSize represents the the size of the whole file including 
+    padding and headerfiles
+    while biSize is the number of bytes required by the structure 
+    
+
+11. If biHeight is positive, the bitmap is a bottom-up DIB (device-independent bitmap)
+	and its origin is the lower left corner
+	while if it is negative it is a top-down DIB and its
+	origin is the upper left corner
+
+12. The biBitCount member of the BITMAPINFOHEADER structure 
+    determines the number ofbits that define each pixel and
+    the maximum number of colors in the bitmap
+
+13. It may return null if fopen is not able to create the file 
+
+14. Because we want to read just one block of given size at a time 
+    here in our code we just want to read 1 RGB or just 1 pixel at 
+    a time
+    
+15. If bi.biWidth = 3 then padding = 3 bytes
+
+16. It skips over the padding in any line and look for next pixel 
+
+17. This is an integer constant which, when used as the whence argument
+    to the fseek ,specifies that the offset provided is relative to the 
+    current file position
+
+18. Rick Astley
