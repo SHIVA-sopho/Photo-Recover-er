@@ -39,24 +39,15 @@ int main(int argc , char* argv[])
 
       unsigned char bytes[512];
 
-    //int number=1;
     while(fread(&bytes,512,1,inptr) )
     {
-        if(bytes == NULL)
-        {
-            break;
-        } 
-        //printf("entered while \n");
+        
         if(bytes[0] == 0xff && bytes[1] == 0xd8 && bytes[2] == 0xff && ((bytes[3] & 0xe0) == 0xe0))
         {   
-            //printf("got the star \n");
             if(jpeg == 0)
             {
-               // printf("first star \n");
                 sprintf(filename,"00%d.jpg",(jpeg));
-                //printf("sprintf worked  \n");
                 outptr = fopen(filename,"a");
-                //printf("outptr file opened \n");
                 if(outptr == NULL)
                 {
                     printf("Usage: ./copy infile outfile\n");
@@ -71,7 +62,6 @@ int main(int argc , char* argv[])
                 unit = jpeg % 10;
                 tens = (jpeg/10) % 10;
                 hundred = (jpeg/100) % 10;
-                //printf("next star \n");
                 fclose(outptr);
                 sprintf(filename,"%d%d%d.jpg",hundred,tens,(unit));
                 outptr = fopen(filename,"a");
@@ -87,15 +77,10 @@ int main(int argc , char* argv[])
         }
         if(jpeg > 0)
         {
-        //printf("writeen in outptr \n");
         fwrite(&bytes,512,1,outptr);
         }
-        /*else
-        printf(" not written in file \n");*/
         
     }
-    //printf("reached end \n");
-    //free(bytes);
     fclose(inptr);
     fclose(outptr);
     return 0;
