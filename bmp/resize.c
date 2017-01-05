@@ -78,8 +78,8 @@ int main(int argc, char* argv[])
     
     bi_new.biWidth = bi.biWidth * fact;
     bi_new.biHeight = bi.biHeight * fact;
-  //  int Padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
-  //  int newPadding = (4 - (bi_new.biWidth * sizeof(RGBTRIPLE) ) % 4) % 4;
+   int Padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
+    int newPadding = (4 - (bi_new.biWidth * sizeof(RGBTRIPLE) ) % 4) % 4;
      
     bf_new.bfSize = 54 + bi_new.biWidth * abs(bi_new.biHeight) * sizeof(RGBTRIPLE) + newPadding * abs(bi_new.biHeight);
      
