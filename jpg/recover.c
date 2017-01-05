@@ -65,7 +65,13 @@ int main(int argc , char* argv[])
                 fclose(outptr);
                 sprintf(filename,"%d%d%d.jpg",hundred,tens,(unit));
                 outptr = fopen(filename,"a");
-             
+                if(outptr == NULL)
+                {
+                    printf("Usage: ./copy infile outfile\n");
+                    fclose(inptr);
+                    fclose(outptr);
+                   return 3;
+                }
                 jpeg++;
             }
         }
