@@ -42,10 +42,10 @@ int main(int argc , char* argv[])
     //int number=1;
     while(fread(&bytes,512,1,inptr) )
     {
-      /*  if(bytes == NULL)
+        if(bytes == NULL)
         {
             break;
-        } */
+        } 
         //printf("entered while \n");
         if(bytes[0] == 0xff && bytes[1] == 0xd8 && bytes[2] == 0xff && ((bytes[3] & 0xe0) == 0xe0))
         {   
