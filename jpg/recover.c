@@ -36,10 +36,10 @@ int main(int argc , char* argv[])
         fclose(inptr);
         return 2;
     }
-    //printf("inptr to i file created\n");
-   // unsigned char* bytes = (unsigned char*) malloc(512); 
+    printf("inptr to i file created\n");
+    unsigned char* bytes = (unsigned char*) malloc(512); 
       unsigned char bytes[512];
-     // printf("bytes created\n");
+      printf("bytes created\n");
     
     //int number=1;
     while(fread(&bytes,512,1,inptr) )
